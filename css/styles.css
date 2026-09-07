@@ -1,0 +1,452 @@
+/* =========================================================
+   GALERÍA CÓDIGO · TP GRUPAL 1
+   Identidad visual inspirada en una galería/museo clásico.
+   ========================================================= */
+
+:root {
+  --vino: #4b1015;
+  --vino-2: #651922;
+  --dorado: #c9a45e;
+  --dorado-claro: #e6cf9d;
+  --marfil: #f1e4ca;
+  --pared: #e8d4b2;
+  --papel: #f8efd9;
+  --tinta: #28150f;
+  --muted: #6f5d4e;
+  --madera: #3a2118;
+  --sombra: 0 20px 50px rgba(35, 17, 10, .20);
+  --ancho: 1500px;
+  --radio: 3px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-width: 0;
+  color: var(--tinta);
+  background: var(--pared);
+  font-family: "Montserrat", Arial, sans-serif;
+  line-height: 1.55;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; }
+
+h1, h2, h3, .brand-name, .museum-title, .plaque-name {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+/* ---------- HEADER ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .8rem 5vw;
+  color: var(--marfil);
+  background: linear-gradient(90deg, #3c0d12, var(--vino), #3c0d12);
+  border-bottom: 2px solid var(--dorado);
+  box-shadow: 0 4px 22px rgba(0,0,0,.16);
+}
+.brand { display: flex; align-items: center; gap: .85rem; text-decoration: none; }
+.brand-icon { font-size: 1.9rem; color: var(--dorado); }
+.brand-name { display: block; font-size: 1.55rem; letter-spacing: .08em; line-height: 1; }
+.brand-tagline { display: block; margin-top: .25rem; color: var(--dorado); font-size: .61rem; letter-spacing: .25em; text-transform: uppercase; }
+.main-nav { display: none; }
+.main-nav.open {
+  position: absolute;
+  top: 100%;
+  left: 5vw;
+  right: 5vw;
+  display: grid;
+  padding: 1rem;
+  gap: .25rem;
+  background: var(--vino);
+  border: 1px solid var(--dorado);
+  box-shadow: var(--sombra);
+}
+.main-nav a { padding: .75rem; text-decoration: none; text-transform: uppercase; letter-spacing: .12em; font-size: .74rem; }
+.main-nav a:hover, .main-nav a:focus-visible { color: var(--dorado-claro); }
+.menu-toggle, .museum-button {
+  border: 1px solid var(--dorado);
+  color: var(--marfil);
+  background: transparent;
+  cursor: pointer;
+}
+.menu-toggle { padding: .55rem .75rem; font-size: 1.1rem; }
+.museum-button { display: none; padding: .72rem 1.05rem; letter-spacing: .15em; text-transform: uppercase; font-size: .7rem; }
+
+/* ---------- PORTADA / SALA PRINCIPAL ---------- */
+.museum-room {
+  position: relative;
+  overflow: hidden;
+  min-height: calc(100vh - 78px);
+  padding: 3.5rem 5vw 2.8rem;
+  background:
+    radial-gradient(circle at 50% 7%, rgba(255,255,255,.55), transparent 30%),
+    linear-gradient(90deg, rgba(120,86,52,.10), transparent 8%, transparent 92%, rgba(120,86,52,.10)),
+    var(--pared);
+}
+.museum-room::before, .museum-room::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(18px, 4vw, 55px);
+  background: repeating-linear-gradient(90deg, #c9b18e 0 7px, #e7d6b9 7px 15px, #b89d79 15px 19px);
+  box-shadow: inset 0 0 15px rgba(70,45,25,.22);
+}
+.museum-room::before { left: 0; }
+.museum-room::after { right: 0; }
+.room-inner { position: relative; z-index: 2; max-width: var(--ancho); margin: 0 auto; }
+.museum-heading { text-align: center; margin-bottom: 2.4rem; }
+.museum-title { margin: 0; font-size: clamp(2.6rem, 7vw, 5.8rem); line-height: .95; font-weight: 600; letter-spacing: .025em; text-transform: uppercase; }
+.ornament { width: 105px; height: 12px; margin: .8rem auto; position: relative; }
+.ornament::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--madera); }
+.ornament::after { content: "◆"; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-54%); background: var(--pared); padding: 0 .5rem; font-size: .55rem; }
+.museum-subtitle { margin: 0 auto; max-width: 900px; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(.95rem, 2vw, 1.25rem); letter-spacing: .24em; text-transform: uppercase; }
+.museum-purpose { max-width: 820px; margin: 1rem auto 0; color: var(--muted); font-size: .92rem; }
+
+.gallery-grid { display: grid; grid-template-columns: 1fr; gap: 2.6rem 1.35rem; align-items: start; }
+.member-card { min-width: 0; position: relative; transition: transform .25s ease, filter .35s ease; }
+.member-card.is-highlighted { transform: translateY(-10px) scale(1.015); filter: drop-shadow(0 18px 18px rgba(85,42,10,.28)); }
+.picture-light { width: 72px; height: 15px; margin: 0 auto .55rem; border-radius: 50% 50% 4px 4px; background: linear-gradient(#e0bd6f, #85601f); box-shadow: 0 4px 9px rgba(70,45,20,.22); position: relative; }
+.picture-light::before { content:""; position:absolute; left: 32px; bottom: 12px; width: 8px; height: 10px; background:#6f4a18; }
+.picture-link { display: block; text-decoration: none; }
+.art-frame {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  padding: 3px;
+  overflow: hidden;
+  border: 4px solid #8f692a;
+  background: linear-gradient(135deg, #d5b45c, #7f5519 35%, #e1c16f 55%, #6a4618);
+  box-shadow: var(--sombra);
+}
+.art-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.art-placeholder { width: 100%; height: 100%; display: grid; place-content: center; padding: 1rem; text-align: center; color: #f7e5ba; background: radial-gradient(circle at 50% 30%, #584023, #20130f 70%); }
+.art-placeholder strong { display: block; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(1.8rem, 5vw, 3.8rem); }
+.art-placeholder span { display: block; margin-top: .45rem; letter-spacing: .14em; text-transform: uppercase; font-size: .68rem; }
+.museum-plaque {
+  width: 86%;
+  margin: 1rem auto 0;
+  padding: .85rem .65rem .72rem;
+  text-align: center;
+  background: linear-gradient(135deg, #d8bc81, #ead7a7 48%, #b68c4e);
+  border: 1px solid #876222;
+  box-shadow: 0 5px 12px rgba(58,33,24,.18);
+}
+.plaque-name { display: block; font-size: 1.15rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.plaque-number { display: block; margin-top: .15rem; font-size: .65rem; letter-spacing: .18em; text-transform: uppercase; }
+
+.room-footer { margin-top: 2.5rem; text-align: center; }
+.bench { width: min(620px, 78%); height: 65px; margin: 0 auto 1.25rem; border-radius: 50px 50px 10px 10px; background: repeating-linear-gradient(90deg, #641922 0 20px, #55131a 20px 40px); box-shadow: inset 0 8px 12px rgba(255,255,255,.07), 0 13px 20px rgba(45,25,20,.25); position: relative; }
+.bench::before, .bench::after { content:""; position:absolute; bottom:-32px; width: 10px; height: 34px; background:#352018; }
+.bench::before { left: 12%; } .bench::after { right: 12%; }
+.room-actions { margin-top: 2.8rem; display: flex; justify-content: center; flex-wrap: wrap; gap: .8rem; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+  min-height: 48px; padding: .8rem 1.2rem; border: 1px solid var(--vino); text-decoration: none; cursor: pointer;
+  font-weight: 600; letter-spacing: .07em; text-transform: uppercase; font-size: .72rem;
+}
+.btn-primary { color: #fff2dc; background: var(--vino); border-color: var(--dorado); box-shadow: inset 0 0 0 2px var(--vino), inset 0 0 0 3px var(--dorado); }
+.btn-secondary { color: var(--vino); background: rgba(248,239,217,.55); }
+.btn:hover, .btn:focus-visible { transform: translateY(-2px); }
+.visit-status { min-height: 1.5rem; margin: 1rem 0 0; color: var(--vino); font-weight: 600; font-size: .86rem; }
+
+/* Sala iluminada por JS */
+body.museum-lit .museum-room { background: radial-gradient(circle at 50% 5%, rgba(255,249,221,.95), transparent 38%), linear-gradient(90deg, rgba(120,86,52,.08), transparent 8%, transparent 92%, rgba(120,86,52,.08)), #efdfc3; }
+body.museum-lit .art-frame { box-shadow: 0 18px 50px rgba(119,78,20,.30), 0 0 28px rgba(255,222,143,.22); }
+
+/* ---------- PERFIL ---------- */
+.profile-page { min-height: calc(100vh - 78px); padding: 2.2rem 5vw 5rem; background: radial-gradient(circle at 25% 10%, rgba(255,255,255,.35), transparent 33%), var(--pared); }
+.profile-inner { max-width: 1200px; margin: 0 auto; }
+.profile-nav { display: grid; grid-template-columns: 1fr; gap: .55rem; margin-bottom: 2.5rem; }
+.profile-nav a { text-align: center; padding: .65rem .8rem; border: 1px solid rgba(75,16,21,.25); background: rgba(248,239,217,.48); text-decoration: none; font-size: .78rem; font-weight: 600; }
+.profile-hero { display: grid; gap: 2.6rem; align-items: center; }
+.profile-frame-wrap {
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  isolation: isolate;
+  padding-top: 34px;
+}
+
+/* Lámpara del museo */
+.profile-frame-wrap::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: -155px;
+  width: 145%;
+  height: 250px;
+  transform: translateX(-50%);
+  clip-path: polygon(43% 0, 57% 0, 91% 100%, 9% 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 244, 184, .88) 0%,
+    rgba(255, 226, 143, .42) 48%,
+    rgba(255, 216, 117, .08) 100%
+  );
+  filter: blur(5px);
+  opacity: 0;
+  transition: opacity .45s ease;
+}
+
+/* Halo alrededor del cuadro */
+.profile-frame-wrap::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+  inset: 7px -30px -35px;
+  border-radius: 45%;
+  background: radial-gradient(
+    ellipse at 50% 38%,
+    rgba(255, 238, 171, .72) 0%,
+    rgba(230, 183, 84, .34) 38%,
+    transparent 72%
+  );
+  filter: blur(10px);
+  opacity: 0;
+  transition: opacity .45s ease;
+}
+
+.profile-frame-wrap.spotlight::before,
+.profile-frame-wrap.spotlight::after {
+  opacity: 1;
+}
+
+.profile-frame {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  padding: 3px;
+  border: 4px solid #8f692a;
+  background: #8a6229;
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  transition:
+    transform .45s ease,
+    filter .45s ease,
+    box-shadow .45s ease,
+    border-color .45s ease;
+}
+
+.profile-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: filter .45s ease, transform .45s ease;
+}
+
+.profile-frame-wrap.spotlight .profile-frame {
+  transform: translateY(-4px) scale(1.018);
+  border-color: #d8b35b;
+  filter: brightness(1.12) saturate(1.08);
+  box-shadow:
+    0 24px 55px rgba(45, 24, 10, .38),
+    0 0 22px rgba(255, 222, 137, .85),
+    0 0 55px rgba(205, 151, 52, .52);
+}
+
+.profile-frame-wrap.spotlight .profile-frame img {
+  filter: brightness(1.08) contrast(1.03);
+  transform: scale(1.006);
+}
+
+/* Refuerza el cambio ambiental sin volver ilegible el perfil */
+body.profile-spotlight-on .profile-hero {
+  position: relative;
+}
+
+body.profile-spotlight-on .profile-copy {
+  background: rgba(248, 239, 217, .82);
+  border: 1px solid rgba(184, 145, 77, .42);
+  box-shadow: 0 14px 35px rgba(68, 42, 22, .12);
+  padding: 1.4rem;
+}
+
+body.profile-spotlight-on .profile-page {
+  background:
+    radial-gradient(circle at 28% 25%, rgba(255, 236, 170, .46), transparent 24%),
+    radial-gradient(circle at 28% 25%, rgba(255, 255, 255, .22), transparent 40%),
+    #dfceb0;
+}
+
+@keyframes museumSpotlightPulse {
+  0%, 100% { filter: brightness(1.12) saturate(1.08); }
+  50% { filter: brightness(1.18) saturate(1.12); }
+}
+
+.profile-frame-wrap.spotlight .profile-frame {
+  animation: museumSpotlightPulse 2.4s ease-in-out infinite;
+}
+.profile-copy .kicker, .section-kicker { margin:0 0 .5rem; color: var(--vino); text-transform: uppercase; letter-spacing:.18em; font-size:.72rem; font-weight:700; }
+.profile-copy h1 { margin:0 0 .55rem; font-size: clamp(3.1rem, 9vw, 6rem); line-height:.9; }
+.profile-meta { margin:0 0 1.4rem; color:var(--vino); font-weight:600; }
+.profile-description { max-width:650px; color:var(--muted); }
+.profile-actions { display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1.5rem; }
+.profile-sections { display:grid; gap:1.2rem; margin-top:4rem; }
+.info-card { min-width:0; padding:1.45rem; background:rgba(248,239,217,.72); border:1px solid rgba(99,67,40,.25); box-shadow:0 10px 25px rgba(70,45,25,.08); }
+.info-card h2 { margin:.1rem 0 1rem; font-size:2rem; }
+.skill-list { list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:.55rem; }
+.skill-list li { padding:.45rem .65rem; background:#efe0bd; border:1px solid #b69155; }
+.favorite-list { margin:0; padding-left:1.3rem; }
+.favorite-list li { margin:.45rem 0; }
+.dynamic-panel { display:none; margin-top:1rem; padding:1rem; border-left:3px solid var(--dorado); background:rgba(255,255,255,.35); }
+.dynamic-panel.visible { display:block; }
+.favorite-list li.random-pick { background:#ead3a4; font-weight:700; padding:.2rem .35rem; }
+body.room-warm .profile-page { background:#f1d7aa; }
+body.room-night .profile-page { background:#6f655c; color:#fff3df; }
+body.room-night .info-card { color:var(--tinta); }
+.audioguide { font-family:"Cormorant Garamond",Georgia,serif; font-size:1.25rem; }
+
+/* ---------- BITÁCORA ---------- */
+.journal-page { min-height: calc(100vh - 78px); padding: 3.2rem 5vw 5rem; background: #efe2c8; }
+.journal-inner { max-width: 1050px; margin:0 auto; }
+.journal-title { margin:0; font-size:clamp(3rem,8vw,5.7rem); line-height:.95; }
+.journal-lead { max-width:760px; color:var(--muted); }
+.timeline { margin-top:3rem; border-top:1px solid #b99e71; }
+.timeline-entry { display:grid; grid-template-columns:54px 1fr; gap:1rem; padding:2rem 0; border-bottom:1px solid #b99e71; }
+.timeline-number { font-family:"Cormorant Garamond",Georgia,serif; font-size:2.5rem; color:#a57a35; line-height:1; }
+.timeline-entry h2 { margin:.1rem 0 .55rem; font-size:2rem; }
+.problem-solution { display:grid; gap:.7rem; margin-top:1rem; }
+.problem-solution div { padding:.9rem; background:rgba(255,255,255,.35); border-left:3px solid #a57a35; }
+
+/* ---------- FOOTER ---------- */
+.site-footer { padding:2rem 5vw; color:#f8e6c3; background:#26100e; border-top:2px solid var(--dorado); }
+.footer-inner { max-width:var(--ancho); margin:0 auto; display:flex; flex-direction:column; gap:.5rem; }
+.site-footer p { margin:0; }
+.site-footer a { color:#e2c37f; }
+
+/* ---------- BREAKPOINT 400 px ---------- */
+@media (min-width:400px) {
+  .gallery-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .profile-nav { grid-template-columns: repeat(3,1fr); }
+  .problem-solution { grid-template-columns:1fr 1fr; }
+}
+
+/* ---------- BREAKPOINT 900 px ---------- */
+@media (min-width:900px) {
+  .menu-toggle { display:none; }
+  .main-nav { display:flex; align-items:center; gap:.4rem; }
+  .museum-button { display:inline-block; }
+  .gallery-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .profile-hero { grid-template-columns:minmax(330px,.85fr) minmax(0,1.15fr); gap:5rem; }
+  .profile-sections { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .footer-inner { flex-direction:row; justify-content:space-between; align-items:center; }
+}
+
+/* ---------- BREAKPOINT 1200 px ---------- */
+@media (min-width:1200px) {
+  .site-header { padding-left:max(4vw,calc((100vw - var(--ancho))/2)); padding-right:max(4vw,calc((100vw - var(--ancho))/2)); }
+  .museum-room { padding-left:max(5vw,calc((100vw - var(--ancho))/2)); padding-right:max(5vw,calc((100vw - var(--ancho))/2)); }
+  .gallery-grid { grid-template-columns: repeat(5, minmax(0,1fr)); gap:1.6rem; }
+  .museum-title { font-size:5.3rem; }
+}
+
+/* ---------- Pantallas muy grandes ---------- */
+@media (min-width:1600px) {
+  .art-frame { border-width:4px; }
+  .museum-plaque { padding:1rem .75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior:auto !important; transition:none !important; animation:none !important; }
+}
+
+
+/* =========================
+   Iluminación ambiental de los perfiles
+   ========================= */
+body,
+.profile-page,
+.profile-copy,
+.site-header {
+  transition:
+    background .45s ease,
+    background-color .45s ease,
+    color .45s ease,
+    border-color .45s ease,
+    box-shadow .45s ease;
+}
+
+/* Sala cálida */
+body.room-warm {
+  background: #ead8b8;
+}
+
+body.room-warm .profile-page {
+  background:
+    radial-gradient(circle at 28% 24%, rgba(255, 225, 145, .48), transparent 30%),
+    linear-gradient(180deg, #ead8b8 0%, #d9bd8e 100%);
+}
+
+body.room-warm .profile-copy {
+  background: rgba(252, 241, 214, .92);
+  border: 1px solid rgba(166, 117, 49, .38);
+  box-shadow: 0 16px 38px rgba(87, 55, 19, .15);
+}
+
+body.room-warm .site-header {
+  background: rgba(234, 216, 184, .95);
+}
+
+/* Sala nocturna */
+body.room-night {
+  background: #252525;
+  color: #f4ead7;
+}
+
+body.room-night .profile-page {
+  background:
+    radial-gradient(circle at 28% 24%, rgba(208, 168, 83, .20), transparent 30%),
+    linear-gradient(180deg, #34302b 0%, #1c1c1c 100%);
+}
+
+body.room-night .profile-copy,
+body.room-night .profile-details article {
+  background: rgba(49, 45, 40, .94);
+  color: #f4ead7;
+  border-color: rgba(216, 179, 91, .35);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, .32);
+}
+
+body.room-night .profile-meta,
+body.room-night .eyebrow {
+  color: #e3c274;
+}
+
+body.room-night .site-header {
+  background: rgba(31, 31, 31, .95);
+  color: #f4ead7;
+  border-bottom-color: rgba(216, 179, 91, .25);
+}
+
+body.room-night .main-nav a,
+body.room-night .brand,
+body.room-night .profile-topbar a,
+body.room-night .profile-topbar span {
+  color: #f4ead7;
+}
+
+body.room-night .btn-secondary {
+  color: #f4ead7;
+  border-color: #d8b35b;
+}
+
+body.room-night .btn-secondary:hover,
+body.room-night .btn-secondary:focus-visible {
+  background: rgba(216, 179, 91, .12);
+}

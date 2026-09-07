@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Galería Código, proyecto web grupal con HTML, CSS y JavaScript.">
+<title>Galería Código | TP Grupal 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Galería Código, inicio">
+    <span class="brand-icon">◫</span>
+    <span><span class="brand-name">GALERÍA CÓDIGO</span><span class="brand-tagline">Arte · Personas · Tecnología</span></span>
+  </a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+    <a href="index.html">Inicio</a>
+    <a href="index.html#coleccion">La colección</a>
+    <a href="bitacora.html">Bitácora</a>
+    <a href="index.html#equipo">Sobre el equipo</a>
+  </nav>
+  <button class="museum-button" data-enter-museum>▣ &nbsp; Entrar al museo</button>
+</header>
+<main>
+<section class="museum-room" id="coleccion">
+  <div class="room-inner">
+    <div class="museum-heading" id="equipo">
+      <h1 class="museum-title">Una colección diferente</h1>
+      <div class="ornament" aria-hidden="true"></div>
+      <p class="museum-subtitle">Cinco personas. Cinco obras. Un mismo proyecto.</p>
+      <p class="museum-purpose">Somos un equipo de estudiantes que convirtió la presentación personal del TP en una galería digital: cada integrante ocupa el lugar de una obra y el sitio combina creatividad, identidad grupal y desarrollo web.</p>
+    </div>
+
+    <div class="gallery-grid" aria-label="Integrantes del equipo">
+      <article class="member-card" data-name="Adán Mateo">
+        <div class="picture-light" aria-hidden="true"></div>
+        <a class="picture-link" href="adan.html" aria-label="Ver perfil de Adán Mateo">
+          <div class="art-frame"><img src="img/adan-retrato.png" alt="Retrato artístico de Adán Mateo inspirado en un retrato clásico romano"></div>
+          <div class="museum-plaque"><span class="plaque-name">Adán Mateo</span><span class="plaque-number">Obra N.º 01</span></div>
+        </a>
+      </article>
+      <article class="member-card" data-name="Integrante 2">
+        <div class="picture-light" aria-hidden="true"></div>
+        <a class="picture-link" href="integrante2.html"><div class="art-frame"><div class="art-placeholder"><strong>02</strong><span>Retrato pendiente</span></div></div><div class="museum-plaque"><span class="plaque-name">Integrante 2</span><span class="plaque-number">Obra N.º 02</span></div></a>
+      </article>
+      <article class="member-card" data-name="Integrante 3">
+        <div class="picture-light" aria-hidden="true"></div>
+        <a class="picture-link" href="integrante3.html"><div class="art-frame"><div class="art-placeholder"><strong>03</strong><span>Retrato pendiente</span></div></div><div class="museum-plaque"><span class="plaque-name">Integrante 3</span><span class="plaque-number">Obra N.º 03</span></div></a>
+      </article>
+      <article class="member-card" data-name="Integrante 4">
+        <div class="picture-light" aria-hidden="true"></div>
+        <a class="picture-link" href="integrante4.html"><div class="art-frame"><div class="art-placeholder"><strong>04</strong><span>Retrato pendiente</span></div></div><div class="museum-plaque"><span class="plaque-name">Integrante 4</span><span class="plaque-number">Obra N.º 04</span></div></a>
+      </article>
+      <article class="member-card" data-name="Integrante 5">
+        <div class="picture-light" aria-hidden="true"></div>
+        <a class="picture-link" href="integrante5.html"><div class="art-frame"><div class="art-placeholder"><strong>05</strong><span>Retrato pendiente</span></div></div><div class="museum-plaque"><span class="plaque-name">Integrante 5</span><span class="plaque-number">Obra N.º 05</span></div></a>
+      </article>
+    </div>
+
+    <div class="room-footer">
+      <div class="bench" aria-hidden="true"></div>
+      <div class="room-actions">
+        <button class="btn btn-primary" id="startTour">Comenzar recorrido →</button>
+        <a class="btn btn-secondary" href="bitacora.html">Ver bitácora</a>
+      </div>
+      <p class="visit-status" id="visitStatus" aria-live="polite">Elegí una obra o iniciá la visita guiada.</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer"><div class="footer-inner"><p>Galería Código · Trabajo Práctico Grupal 1 · 2026</p><a href="bitacora.html">Diario de la exposición</a></div></footer>
+<script src="js/main.js"></script>
+</body></html>
