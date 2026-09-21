@@ -1,25 +1,541 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Bitácora de desarrollo de Galería Código."><title>Bitácora | Galería Código</title><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/styles.css"></head><body><header class="site-header">
-  <a class="brand" href="index.html" aria-label="Galería Código, inicio">
-    <span class="brand-icon">◫</span>
-    <span><span class="brand-name">GALERÍA CÓDIGO</span><span class="brand-tagline">Arte · Personas · Tecnología</span></span>
-  </a>
-  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-  <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
-    <a href="index.html">Inicio</a>
-    <a href="index.html#coleccion">La colección</a>
-    <a href="bitacora.html">Bitácora</a>
-    <a href="index.html#equipo">Sobre el equipo</a>
-  </nav>
-  <button class="museum-button" data-enter-museum>▣ &nbsp; Entrar al museo</button>
-</header>
-<main class="journal-page"><div class="journal-inner"><p class="section-kicker">Proceso de desarrollo</p><h1 class="journal-title">Diario de la exposición</h1><p class="journal-lead">Esta página debe crecer con el proyecto. La idea es registrar hechos reales: qué decidimos, qué problema apareció, quién participó y qué cambio hicimos para resolverlo.</p>
-<section class="timeline">
-<article class="timeline-entry"><span class="timeline-number">01</span><div><p class="section-kicker">Idea inicial</p><h2>Elegimos una galería de arte</h2><p>Decidimos alejarnos de una portada tradicional y representar a cada integrante como una obra expuesta. Todos los cuadros mantienen el mismo tamaño para sostener una presentación uniforme, mientras que cada retrato puede inspirarse en una obra o corriente artística diferente.</p></div></article>
-<article class="timeline-entry"><span class="timeline-number">02</span><div><p class="section-kicker">Primera base</p><h2>Estructura común del sitio</h2><p>Se creó una portada, cinco páginas de perfiles, la bitácora, una hoja de estilos compartida y archivos JavaScript separados. Los cuatro retratos restantes quedaron como espacios de reemplazo para que cada integrante incorpore luego su propia imagen.</p></div></article>
-<article class="timeline-entry"><span class="timeline-number">03</span><div><p class="section-kicker">Organización</p><h2>Trabajo del equipo</h2><p><strong>Completar durante el trabajo:</strong> roles iniciales, forma de comunicación, fechas de reunión y distribución de archivos.</p><div class="problem-solution"><div><strong>Decisión:</strong> cada integrante debe realizar commits reales desde su cuenta.</div><div><strong>Motivo:</strong> el historial de Git debe reflejar el trabajo compartido.</div></div></div></article>
-<article class="timeline-entry"><span class="timeline-number">04</span><div><p class="section-kicker">Responsive</p><h2>Pruebas obligatorias</h2><p>La base incluye breakpoints explícitos en 400 px, 900 px y 1200 px. Antes de entregar se registrarán aquí los problemas detectados en cada ancho y las correcciones realizadas.</p></div></article>
-<article class="timeline-entry"><span class="timeline-number">05</span><div><p class="section-kicker">JavaScript</p><h2>Interacciones</h2><p>La portada incorpora iluminación del museo y una visita guiada. Cada perfil tiene una interacción propia: foco de obra, ficha técnica, recomendación aleatoria, cambio de iluminación o audioguía textual.</p></div></article>
-<article class="timeline-entry"><span class="timeline-number">06</span><div><p class="section-kicker">Pendiente</p><h2>Problemas y cambios reales</h2><p>Desde este punto deben agregar entradas nuevas con situaciones que realmente ocurran durante el desarrollo. Eviten inventar dificultades sólo para completar la sección.</p></div></article>
-</section><div class="room-actions"><a class="btn btn-primary" href="index.html">Volver al museo</a></div></div></main><footer class="site-footer"><div class="footer-inner"><p>Galería Código · Trabajo Práctico Grupal 1 · 2026</p><a href="bitacora.html">Diario de la exposición</a></div></footer><script src="js/main.js"></script></body></html>
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="Bitácora del proceso de desarrollo del proyecto Galería Código."
+  >
+
+  <title>Bitácora | Galería Código</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+
+    <a
+      class="brand"
+      href="index.html"
+      aria-label="Galería Código, inicio"
+    >
+      <span class="brand-icon">◫</span>
+
+      <span>
+        <span class="brand-name">GALERÍA CÓDIGO</span>
+        <span class="brand-tagline">Arte · Personas · Tecnología</span>
+      </span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+    <nav
+      class="main-nav"
+      id="mainNav"
+      aria-label="Navegación principal"
+    >
+      <a href="index.html">Inicio</a>
+      <a href="index.html#coleccion">La colección</a>
+      <a href="bitacora.html">Bitácora</a>
+      <a href="index.html#equipo">Sobre el equipo</a>
+    </nav>
+
+    <button
+      class="museum-button"
+      data-enter-museum
+    >
+      ▣ &nbsp; Entrar al museo
+    </button>
+
+  </header>
+
+
+  <main class="journal-page">
+
+    <div class="journal-inner">
+
+      <p class="section-kicker">
+        Proceso de desarrollo
+      </p>
+
+      <h1 class="journal-title">
+        Diario de la exposición
+      </h1>
+
+      <p class="journal-lead">
+        En esta bitácora registramos las principales decisiones, cambios y
+        problemas que fueron apareciendo durante el desarrollo de Galería Código.
+        La idea es mostrar cómo fue evolucionando el proyecto desde la propuesta
+        inicial hasta la versión final.
+      </p>
+
+
+      <section class="timeline">
+
+        <!-- 01 -->
+        <article class="timeline-entry">
+
+          <span class="timeline-number">
+            01
+          </span>
+
+          <div>
+
+            <p class="section-kicker">
+              Idea inicial
+            </p>
+
+            <h2>
+              Elegimos una galería de arte
+            </h2>
+
+            <p>
+              Cuando empezamos el trabajo decidimos que no queríamos hacer
+              solamente una página con los perfiles de los cinco integrantes.
+              Buscamos una idea que nos permitiera presentar la información de
+              una forma más original y finalmente elegimos crear una
+              <strong>galería de arte virtual</strong>.
+            </p>
+
+            <p>
+              La propuesta fue representar a cada integrante como si fuera una
+              obra dentro de un museo. Cada perfil tendría su propio retrato,
+              información personal, gustos, habilidades y una pequeña interacción.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- 02 -->
+        <article class="timeline-entry">
+
+          <span class="timeline-number">
+            02
+          </span>
+
+          <div>
+
+            <p class="section-kicker">
+              Primera versión
+            </p>
+
+            <h2>
+              Armamos la estructura general
+            </h2>
+
+            <p>
+              Primero creamos una base común para todo el sitio. Se armó una
+              página principal con la colección de obras, una página para cada
+              integrante, la bitácora y las carpetas necesarias para organizar
+              estilos, imágenes, JavaScript y documentación.
+            </p>
+
+            <div class="problem-solution">
+
+              <div>
+                <strong>HTML:</strong>
+                portada, perfiles individuales y bitácora.
+              </div>
+
+              <div>
+                <strong>Archivos compartidos:</strong>
+                una hoja de estilos general y archivos JavaScript para las
+                interacciones.
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 03 -->
+        <article class="timeline-entry">
+
+          <span class="timeline-number">
+            03
+          </span>
+
+          <div>
+
+            <p class="section-kicker">
+              Organización
+            </p>
+
+            <h2>
+              Dividimos el trabajo utilizando GitHub
+            </h2>
+
+            <p>
+              Para trabajar entre todos usamos GitHub y GitHub Desktop.
+              Cada integrante fue trabajando principalmente sobre su propia
+              rama para evitar modificar directamente el trabajo de los demás.
+            </p>
+
+            <p>
+              Cuando un perfil estaba listo, revisábamos los cambios y luego
+              los incorporábamos a la rama principal mediante Pull Requests.
+            </p>
+
+            <div class="problem-solution">
+
+              <div>
+                <strong>Decisión:</strong>
+                trabajar con ramas individuales.
+              </div>
+
+              <div>
+                <strong>Motivo:</strong>
+                poder identificar los aportes de cada integrante y evitar
+                sobrescribir cambios de otros compañeros.
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 04 -->
+        <article class="timeline-entry">
+
+          <span class="timeline-number">
+            04
+          </span>
+
+          <div>
+
+            <p class="section-kicker">
+              Perfiles
+            </p>
+
+            <h2>
+              Cada integrante empezó a completar su obra
+            </h2>
+
+            <p>
+              A partir de la estructura inicial cada integrante fue completando
+              su página personal. Se agregaron los datos de cada perfil,
+              preferencias, habilidades y las imágenes que funcionan como
+              retratos dentro de la exposición.
+            </p>
+
+            <p>
+              También tuvimos que actualizar algunos nombres de archivos y los
+              enlaces entre las distintas páginas para que la navegación
+              siguiera funcionando correctamente.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- 05 -->
+        <article class="timeline-entry">
+
+          <span class="timeline-number">
+            05
+          </span>
+
+          <div>
+
+            <p class="section-kicker">
+              Diseño
+            </p>
+
+            <h2>
+              Ajustamos los retratos y la presentación
+            </h2>
+
+            <p>
+              Uno de los problemas que apareció fue que las imágenes de los
+              integrantes tenían tamaños y proporciones diferentes. Esto hacía
+              que algunos cuadros ocuparan más espacio que otros y la galería
+              perdiera uniformidad.
+            </p>
+
+            <div class="problem-solution">
+
+              <div>
+                <strong>Problema:</strong>
+                los retratos no tenían el mismo tamaño visual.
+              </div>
+
+              <div>
+                <strong>Solución:</strong>
+                ajustamos los estilos para mantener una presentación pareja
+                entre todas las obras.
+              </div>
+
+            </div>
+
+            <p>
+              También revisamos márgenes, textos y distribución para mantener
+              una estética similar a la de una sala de museo.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- 06 -->
+        <article class="timeline-entry">
+
+          <span class="timeline-number">
+            06
+          </span>
+
+          <div>
+
+            <p class="section-kicker">
+              JavaScript
+            </p>
+
+            <h2>
+              Agregamos interacción a las obras
+            </h2>
+
+            <p>
+              Para sumar interactividad incorporamos el botón
+              <strong>“Encender foco de obra”</strong> en los perfiles.
+              Al utilizarlo cambia la iluminación de la sala y se destaca
+              visualmente el retrato.
+            </p>
+
+            <p>
+              Durante el desarrollo evaluamos otras ideas, como agregar juegos
+              o una audioguía textual, pero finalmente decidimos no incluirlas.
+              Preferimos que la interacción fuera sencilla y estuviera
+              relacionada directamente con la idea de una exposición.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- 07 -->
+        <article class="timeline-entry">
+
+          <span class="timeline-number">
+            07
+          </span>
+
+          <div>
+
+            <p class="section-kicker">
+              Responsive
+            </p>
+
+            <h2>
+              Revisamos el sitio en distintos tamaños
+            </h2>
+
+            <p>
+              También fuimos probando la galería en distintos tamaños de
+              pantalla. Para eso utilizamos media queries que permiten
+              reorganizar los elementos cuando el ancho disponible disminuye.
+            </p>
+
+            <p>
+              El objetivo fue que la portada, la colección y los perfiles
+              pudieran seguir utilizándose tanto desde una computadora como
+              desde pantallas más pequeñas.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- 08 -->
+        <article class="timeline-entry">
+
+          <span class="timeline-number">
+            08
+          </span>
+
+          <div>
+
+            <p class="section-kicker">
+              Integración
+            </p>
+
+            <h2>
+              Fuimos incorporando los perfiles a la rama principal
+            </h2>
+
+            <p>
+              A medida que cada integrante terminaba su parte, revisamos los
+              commits y los archivos modificados antes de incorporarlos a
+              <code>main</code>.
+            </p>
+
+            <p>
+              Este proceso nos permitió ver en la práctica cómo funcionan las
+              ramas, los commits y los Pull Requests dentro de un proyecto
+              compartido.
+            </p>
+
+            <div class="problem-solution">
+
+              <div>
+                <strong>Revisión:</strong>
+                comprobamos qué archivos modificaba cada rama antes de hacer
+                el merge.
+              </div>
+
+              <div>
+                <strong>Resultado:</strong>
+                los perfiles quedaron integrados dentro del mismo proyecto
+                manteniendo un historial de cambios.
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 09 -->
+        <article class="timeline-entry">
+
+          <span class="timeline-number">
+            09
+          </span>
+
+          <div>
+
+            <p class="section-kicker">
+              Estado actual
+            </p>
+
+            <h2>
+              La galería está casi terminada
+            </h2>
+
+            <p>
+              Actualmente ya se encuentran incorporados la página principal,
+              los perfiles individuales, la navegación, la bitácora, los
+              estilos compartidos y las interacciones principales.
+            </p>
+
+            <p>
+              La mayoría de los retratos también están cargados. Como último
+              ajuste nos queda incorporar la imagen definitiva del perfil de
+              Fernando y realizar una revisión general de enlaces, imágenes,
+              botones y comportamiento responsive antes de la entrega.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- 10 -->
+        <article class="timeline-entry">
+
+          <span class="timeline-number">
+            10
+          </span>
+
+          <div>
+
+            <p class="section-kicker">
+              Cierre
+            </p>
+
+            <h2>
+              Lo que aprendimos durante el proyecto
+            </h2>
+
+            <p>
+              Además de seguir practicando HTML, CSS y JavaScript, este trabajo
+              nos permitió tener una primera experiencia más concreta de
+              desarrollo web en equipo.
+            </p>
+
+            <p>
+              Durante el proyecto tuvimos que organizar archivos, trabajar con
+              distintas ramas, revisar cambios de otros integrantes y resolver
+              problemas que aparecieron a medida que la página fue creciendo.
+            </p>
+
+            <p>
+              El resultado mantiene la idea que tuvimos al comienzo:
+              presentar nuestros perfiles personales dentro de una galería
+              de arte virtual, combinando diseño, programación y trabajo grupal.
+            </p>
+
+          </div>
+
+        </article>
+
+      </section>
+
+
+      <div class="room-actions">
+
+        <a
+          class="btn btn-primary"
+          href="index.html"
+        >
+          Volver al museo
+        </a>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <footer class="site-footer">
+
+    <div class="footer-inner">
+
+      <p>
+        Galería Código · Trabajo Práctico Grupal 1 · 2026
+      </p>
+
+      <a href="bitacora.html">
+        Diario de la exposición
+      </a>
+
+    </div>
+
+  </footer>
+
+
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
