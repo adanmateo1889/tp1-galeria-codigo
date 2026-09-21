@@ -93,6 +93,8 @@ h1, h2, h3, .brand-name, .museum-title, .plaque-name {
     linear-gradient(90deg, rgba(120,86,52,.10), transparent 8%, transparent 92%, rgba(120,86,52,.10)),
     var(--pared);
 }
+.museum-intro { min-height: auto; padding-top: 2.5rem; padding-bottom: 2.5rem; }
+.museum-intro .museum-heading { margin-bottom: 0; }
 .museum-room::before, .museum-room::after {
   content: "";
   position: absolute;
@@ -158,6 +160,14 @@ h1, h2, h3, .brand-name, .museum-title, .plaque-name {
 .btn-secondary { color: var(--vino); background: rgba(248,239,217,.55); }
 .btn:hover, .btn:focus-visible { transform: translateY(-2px); }
 .visit-status { min-height: 1.5rem; margin: 1rem 0 0; color: var(--vino); font-weight: 600; font-size: .86rem; }
+.page-transitioning {
+  animation: page-exit .6s ease forwards;
+  pointer-events: none;
+}
+@keyframes page-exit {
+  from { opacity: 1; transform: scale(1); filter: blur(0); }
+  to { opacity: 0; transform: scale(1.03); filter: blur(4px); }
+}
 
 /* Sala iluminada por JS */
 body.museum-lit .museum-room { background: radial-gradient(circle at 50% 5%, rgba(255,249,221,.95), transparent 38%), linear-gradient(90deg, rgba(120,86,52,.08), transparent 8%, transparent 92%, rgba(120,86,52,.08)), #efdfc3; }
@@ -307,9 +317,6 @@ body.profile-spotlight-on .profile-page {
 .dynamic-panel { display:none; margin-top:1rem; padding:1rem; border-left:3px solid var(--dorado); background:rgba(255,255,255,.35); }
 .dynamic-panel.visible { display:block; }
 .favorite-list li.random-pick { background:#ead3a4; font-weight:700; padding:.2rem .35rem; }
-body.room-warm .profile-page { background:#f1d7aa; }
-body.room-night .profile-page { background:#6f655c; color:#fff3df; }
-body.room-night .info-card { color:var(--tinta); }
 .audioguide { font-family:"Cormorant Garamond",Georgia,serif; font-size:1.25rem; }
 
 /* ---------- BITÁCORA ---------- */
@@ -382,71 +389,51 @@ body,
     box-shadow .45s ease;
 }
 
-/* Sala cálida */
-body.room-warm {
-  background: #ead8b8;
-}
-
-body.room-warm .profile-page {
-  background:
-    radial-gradient(circle at 28% 24%, rgba(255, 225, 145, .48), transparent 30%),
-    linear-gradient(180deg, #ead8b8 0%, #d9bd8e 100%);
-}
-
-body.room-warm .profile-copy {
-  background: rgba(252, 241, 214, .92);
-  border: 1px solid rgba(166, 117, 49, .38);
-  box-shadow: 0 16px 38px rgba(87, 55, 19, .15);
-}
-
-body.room-warm .site-header {
-  background: rgba(234, 216, 184, .95);
-}
-
-/* Sala nocturna */
-body.room-night {
+/* Luz nocturna */
+body.lighting-night {
   background: #252525;
   color: #f4ead7;
 }
 
-body.room-night .profile-page {
+body.lighting-night .profile-page {
   background:
     radial-gradient(circle at 28% 24%, rgba(208, 168, 83, .20), transparent 30%),
     linear-gradient(180deg, #34302b 0%, #1c1c1c 100%);
 }
 
-body.room-night .profile-copy,
-body.room-night .profile-details article {
+body.lighting-night .profile-copy,
+body.lighting-night .info-card,
+body.lighting-night .profile-nav a {
   background: rgba(49, 45, 40, .94);
   color: #f4ead7;
   border-color: rgba(216, 179, 91, .35);
   box-shadow: 0 16px 40px rgba(0, 0, 0, .32);
 }
 
-body.room-night .profile-meta,
-body.room-night .eyebrow {
+body.lighting-night .profile-meta,
+body.lighting-night .profile-copy .kicker,
+body.lighting-night .section-kicker {
   color: #e3c274;
 }
 
-body.room-night .site-header {
+body.lighting-night .site-header {
   background: rgba(31, 31, 31, .95);
   color: #f4ead7;
   border-bottom-color: rgba(216, 179, 91, .25);
 }
 
-body.room-night .main-nav a,
-body.room-night .brand,
-body.room-night .profile-topbar a,
-body.room-night .profile-topbar span {
+body.lighting-night .main-nav a,
+body.lighting-night .brand {
   color: #f4ead7;
 }
 
-body.room-night .btn-secondary {
+body.lighting-night .btn-secondary,
+body.lighting-night .profile-nav a {
   color: #f4ead7;
   border-color: #d8b35b;
 }
 
-body.room-night .btn-secondary:hover,
-body.room-night .btn-secondary:focus-visible {
+body.lighting-night .btn-secondary:hover,
+body.lighting-night .btn-secondary:focus-visible {
   background: rgba(216, 179, 91, .12);
 }

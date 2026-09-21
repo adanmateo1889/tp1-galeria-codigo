@@ -21,12 +21,11 @@
       </a>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
       <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
-        <a href="index.html">Inicio</a>
+        <a href="index.html#inicio">Inicio</a>
         <a href="index.html#coleccion">La colección</a>
         <a href="bitacora.html">Bitácora</a>
         <a href="index.html#equipo">Sobre el equipo</a>
       </nav>
-      <button class="museum-button" data-enter-museum>▣ &nbsp; Entrar al museo</button>
     </header>
     <main class="profile-page">
       <div class="profile-inner">
@@ -50,7 +49,9 @@
             </p>
             <div class="profile-actions">
               <button class="btn btn-primary" id="spotlightButton">Encender foco de obra</button>
-              <button class="btn btn-secondary" id="roomLightButton">Cambiar iluminación de la sala</button>
+              <button class="btn btn-secondary" id="roomLightButton" type="button" data-light-toggle aria-pressed="false">
+                Cambiar a luz nocturna
+              </button>
               <p class="visit-status" id="profileStatus" aria-live="polite">Probá los controles de iluminación de la galería.</p>
             </div>
           </div>
