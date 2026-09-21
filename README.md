@@ -17,8 +17,8 @@ La portada presenta al equipo, permite acceder a todos los perfiles y ofrece una
 | Adán Mateo       | [adanmateo1889](https://github.com/adanmateo1889)     | `adan.html`        |
 | Raúl Mata Botana | [RaulMataBotana](https://github.com/RaulMataBotana)   | `raul.html`        |
 | Integrante 3     | [fernando-eb2406](https://github.com/fernando-eb2406) | `fernando.html`    |
-| Integrante 4     | Completar                                             | `integrante4.html` |
-| Carmen Leonela Lamas | [Carleu27](https://github.com/Carleu27)          | `leonela.html` |
+| Marcelo Yrala    | [Marcelo-Yrala](https://github.com/marcelo-yrala)     | `marcelo.html`     |
+| Carmen Leonela Lamas | [Carleu27](https://github.com/Carleu27)           | `leonela.html`     |
 
 ## Tecnologías utilizadas
 
@@ -38,7 +38,7 @@ tp1-galeria-codigo-v2.2/
 ├── adan.html
 ├── raul.html
 ├── integrante3.html
-├── integrante4.html
+├── marcelo.html
 ├── leonela.html
 ├── bitacora.html
 ├── README.md
