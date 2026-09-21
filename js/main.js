@@ -9,29 +9,25 @@ if (menuToggle && mainNav) {
   });
 }
 
-const enterMuseumButtons = document.querySelectorAll('[data-enter-museum]');
-enterMuseumButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    document.body.classList.add('museum-lit');
-    document.querySelector('#coleccion')?.scrollIntoView({ behavior: 'smooth' });
-  });
-});
-
 const tourButton = document.querySelector('#startTour');
-const members = [...document.querySelectorAll('.member-card')];
-const visitStatus = document.querySelector('#visitStatus');
-let currentMember = -1;
+const firstProfileLink = document.querySelector('.gallery-grid .picture-link[href="adan.html"]');
 
-if (tourButton && members.length) {
+if (tourButton && firstProfileLink) {
   tourButton.addEventListener('click', () => {
-    members.forEach(card => card.classList.remove('is-highlighted'));
-    currentMember = (currentMember + 1) % members.length;
-    const current = members[currentMember];
-    current.classList.add('is-highlighted');
-    current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    if (visitStatus) {
-      const name = current.dataset.name || `Obra ${currentMember + 1}`;
-      visitStatus.textContent = `Visita guiada: obra ${currentMember + 1} de ${members.length} · ${name}`;
+    const destination = firstProfileLink.getAttribute('href');
+    if (!destination) {
+      return;
     }
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reducedMotion) {
+      window.location.href = destination;
+      return;
+    }
+
+    document.body.classList.add('page-transitioning');
+    window.setTimeout(() => {
+      window.location.href = destination;
+    }, 600);
   });
 }

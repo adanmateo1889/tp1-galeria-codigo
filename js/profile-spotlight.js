@@ -23,29 +23,32 @@ if (spotlightButton && portrait) {
   });
 }
 
-const roomModes = [
-  { className: '', label: 'Sala neutra', buttonText: 'Cambiar iluminación de la sala' },
-  { className: 'room-warm', label: 'Sala cálida', buttonText: 'Cambiar a luz nocturna' },
-  { className: 'room-night', label: 'Sala nocturna', buttonText: 'Volver a luz neutra' }
-];
+let nightLighting = false;
 
-let roomMode = 0;
+const applyLightingMode = () => {
+  const modeClass = nightLighting ? 'lighting-night' : 'lighting-neutral';
+  const modeLabel = nightLighting ? 'Luz nocturna' : 'Luz neutra';
+  document.body.classList.remove('lighting-neutral', 'lighting-night');
+  document.body.classList.add(modeClass);
+
+  if (roomLightButton) {
+    roomLightButton.textContent = nightLighting
+      ? 'Cambiar a luz neutra'
+      : 'Cambiar a luz nocturna';
+    roomLightButton.setAttribute('aria-pressed', String(nightLighting));
+  }
+
+  if (status) {
+    status.textContent = `Iluminación de sala: ${modeLabel}`;
+  }
+};
 
 if (roomLightButton) {
+  applyLightingMode();
   roomLightButton.addEventListener('click', () => {
-    document.body.classList.remove('room-warm', 'room-night');
-
-    roomMode = (roomMode + 1) % roomModes.length;
-    const mode = roomModes[roomMode];
-
-    if (mode.className) {
-      document.body.classList.add(mode.className);
-    }
-
-    roomLightButton.textContent = mode.buttonText;
-
-    if (status) {
-      status.textContent = `Iluminación de sala: ${mode.label}.`;
-    }
+    nightLighting = !nightLighting;
+    applyLightingMode();
   });
+} else {
+  applyLightingMode();
 }

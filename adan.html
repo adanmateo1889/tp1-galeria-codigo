@@ -68,7 +68,7 @@
       id="mainNav"
       aria-label="Navegación principal"
     >
-      <a href="index.html">
+      <a href="index.html#inicio">
         Inicio
       </a>
 
@@ -85,12 +85,6 @@
       </a>
     </nav>
 
-    <button
-      class="museum-button"
-      data-enter-museum
-    >
-      ▣ &nbsp; Entrar al museo
-    </button>
 
   </header>
 
@@ -164,11 +158,8 @@
               Encender foco de obra
             </button>
 
-            <button
-              class="btn btn-secondary"
-              id="roomLightButton"
-            >
-              Cambiar iluminación de la sala
+            <button class="btn btn-secondary" id="roomLightButton" type="button" data-light-toggle aria-pressed="false">
+              Cambiar a luz nocturna
             </button>
 
             <p

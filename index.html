@@ -14,21 +14,35 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <header class="site-header">
+    <header class="site-header" id="inicio">
       <a class="brand" href="index.html" aria-label="Galería Código, inicio">
         <span class="brand-icon">◫</span>
         <span><span class="brand-name">GALERÍA CÓDIGO</span><span class="brand-tagline">Arte · Personas · Tecnología</span></span>
       </a>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
       <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
-        <a href="index.html">Inicio</a>
+        <a href="index.html#inicio">Inicio</a>
         <a href="index.html#coleccion">La colección</a>
         <a href="bitacora.html">Bitácora</a>
         <a href="index.html#equipo">Sobre el equipo</a>
       </nav>
-      <button class="museum-button" data-enter-museum>▣ &nbsp; Entrar al museo</button>
     </header>
     <main>
+      <section class="museum-room museum-intro" id="recorrido">
+        <div class="room-inner">
+          <div class="museum-heading">
+            <h1 class="museum-title">Bienvenidos al museo</h1>
+            <div class="ornament" aria-hidden="true"></div>
+            <p class="museum-subtitle">Un recorrido por las personas detrás del código.</p>
+            <p class="museum-purpose">
+              La exposición reúne cinco perfiles y sus historias, presentados como obras de una galería digital.
+            </p>
+            <div class="room-actions">
+              <a class="btn btn-primary" href="#coleccion">Ver la colección</a>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="museum-room" id="coleccion">
         <div class="room-inner">
           <div class="museum-heading" id="equipo">
