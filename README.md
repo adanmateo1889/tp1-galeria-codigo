@@ -103,7 +103,7 @@ Decidimos simplificar el menú y evitar botones que llevaran al mismo lugar. El 
 
 **Comenzar recorrido:** inicia la visita guiada desde el primer perfil. Antes de abrir la primera obra se aplica una transición breve para reforzar la idea de entrada a la galería.
 
-![Comenzar-recorrido](docs/captura-ver-recorrido.jpg)
+![Comenzar-recorrido](docs/captura-recorrido.jpg)
 
 **Ver colección:** permite acceder a la sección donde se presentan las obras de la galería.
 
