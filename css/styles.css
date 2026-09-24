@@ -444,5 +444,6 @@ body.lighting-night .btn-secondary:focus-visible {
 
 body.lighting-night .info-card .skill-list li {
   color: var(--marfil);
+  background: #3a3530;
+  border-color: #8f7442;
 }
-
