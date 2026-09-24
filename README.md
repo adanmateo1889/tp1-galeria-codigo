@@ -113,6 +113,10 @@ Decidimos simplificar el menú y evitar botones que llevaran al mismo lugar. El 
 
 ![Ver-menu-movil](docs/captura-menu-movil.jpg)
 
+**Ver bitácora:** permite acceder a la sección donde se presenta el proceso y recorrido de creación de la galería.
+
+![Ver bitácora](docs/captura-ver-bitacora.jpg)
+
 ### Perfiles — `js/profile-spotlight.js`
 
 Los cinco perfiles utilizan las mismas interacciones para mantener una experiencia común.
@@ -130,7 +134,7 @@ Cuando la sala está en modo neutro, el botón ofrece cambiar a luz nocturna. Cu
 
 Durante el desarrollo probamos otras alternativas para este control, pero finalmente elegimos dos estados para que la interacción fuera más clara y sencilla.
 
-![Ver-cambiar-iluminacion](docs/captura-cambiar-iluminacion-luz-nocturna.jpg)
+![Ver-cambiar-iluminacion](docs/captura-cambiar-iluminación-luz-nocturna.jpg)
 
 ## Diseño responsive
 
