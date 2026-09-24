@@ -111,7 +111,7 @@ Decidimos simplificar el menú y evitar botones que llevaran al mismo lugar. El 
 
 **Menú móvil:** abre y cierra la navegación cuando el sitio se visualiza en pantallas pequeñas y actualiza el atributo `aria-expanded`.
 
-![Ver-menu-movil](docs/captura-ver-menu-movil.jpg)
+![Ver-menu-movil](docs/captura-menu-movil.jpg)
 
 ### Perfiles — `js/profile-spotlight.js`
 
@@ -119,7 +119,7 @@ Los cinco perfiles utilizan las mismas interacciones para mantener una experienc
 
 **Encender foco de obra:** destaca el retrato mediante un efecto de iluminación. Al activarlo, el texto del botón cambia para permitir apagar nuevamente el foco.
 
-![Ver-Encender-Foco](docs/captura-ver-encender-foco.jpg)
+![Ver-Encender-Foco](docs/captura-encender-foco.jpg)
 
 **Cambiar iluminación de la sala:** se simplificó a un único botón que alterna entre dos estados:
 
@@ -130,7 +130,7 @@ Cuando la sala está en modo neutro, el botón ofrece cambiar a luz nocturna. Cu
 
 Durante el desarrollo probamos otras alternativas para este control, pero finalmente elegimos dos estados para que la interacción fuera más clara y sencilla.
 
-![Ver-cambiar-iluminacion](docs/captura-ver-cambiar-iluminacion-luz-nocturna.jpg)
+![Ver-cambiar-iluminacion](docs/captura-cambiar-iluminacion-luz-nocturna.jpg)
 
 ## Diseño responsive
 
