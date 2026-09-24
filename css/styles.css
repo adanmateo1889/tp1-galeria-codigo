@@ -437,3 +437,12 @@ body.lighting-night .btn-secondary:hover,
 body.lighting-night .btn-secondary:focus-visible {
   background: rgba(216, 179, 91, .12);
 }
+
+/* =========================
+   CORRECCIÓN DE TEXTO · MODO NOCTURNO
+   ========================= */
+
+body.lighting-night .info-card .skill-list li {
+  color: var(--marfil);
+}
+
